@@ -1,7 +1,7 @@
 let gameSeq = [];
 let userSeq = [];
 
-let btns = ["red", "yellow", "green", "blue"];
+let btns = ["yellow", "green", "blue", "red"];
 
 let started = false;
 let level = 0;
@@ -11,7 +11,6 @@ let h2 = document.querySelector("h2");
 // Step 1 : Start the Game.
 document.addEventListener("keypress", function(){
     if(started == false){
-        console.log("Game Is Started !");
         started = true;
         levelUp();
     }
@@ -27,7 +26,7 @@ function gameFlash(btn){
 function userFlash(btn){
     btn.classList.add("userFlash");
     setTimeout(function(){
-   btn.classList.remove("userFlash");
+     btn.classList.remove("userFlash");
     }, 250);
  }
 
@@ -52,11 +51,11 @@ function checkAns(idx){
         setTimeout(levelUp, 1000);
        }
     } else {
-        h2.innerHTML = `Game Over :(<br> Your Score Is : <b>${level}</b><br>Press Any Key To Restart The Game`;
+        h2.innerHTML = `Game Over :( <br><br>Your Score : <b>${level}</b><br>Press Any Key To Restart Game`;
         document.querySelector("body").style.backgroundColor = "red";
-        setTimeout(function(){
-        document.querySelector("body").style.backgroundColor = "rgb(102, 102, 230)";  
-        }, 150);
+        setTimeout(function() {
+            document.querySelector("body").style.backgroundColor = "rgb(102, 102, 230)";  
+        }, 150)
         reset();
     }
 }
